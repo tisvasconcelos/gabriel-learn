@@ -1,0 +1,24 @@
+<h1>Vamos brincar de forca!</h1>
+
+<h2>Pontos: <span id='points'>0</span></h2>
+<h2>Palavras: <span id='words'>0/10</span></h2>
+
+<h3 class='success hide'>Muito bem, a próxima vai começar jaja!</h3>
+<h3 class='error hide'>Não foi dessa vez. A próxima vai começar jaja!</h3>
+
+<div class='words'>
+    {{#each words}}
+        <div class='word' id='word-{{@index}}'>
+            {{#each (wordToArray .)}}
+                <input value='' readonly maxlength='1' data-value='{{.}}'>
+            {{/each}}
+            <input class='attempts' maxlength='10'>
+        </div>
+    {{/each}}
+</div>
+
+<div class='time-block hide'>
+    <h3>Seu tempo acabou!</h3>
+</div>
+
+<script src='/javascripts/portuguese.js'></script>
